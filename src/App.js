@@ -19,6 +19,7 @@ function App() {
         const userRef = await createUserProfileDocument(userAuth);
 
         unsubscribeFromUser = userRef.onSnapshot(snapShot => {
+          console.log(snapShot);
           if (snapShot.exists) {
             setCurrentUser({
               id: snapShot.id,
@@ -32,7 +33,7 @@ function App() {
       unsubscribeFromAuth();
       unsubscribeFromUser();
     };
-  });
+  }, []);
   return (
     <div>
       <Header currentUser={currentUser} />
