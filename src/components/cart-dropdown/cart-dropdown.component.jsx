@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import * as Routes from "../../constants/routes";
 
 import { connect } from "react-redux";

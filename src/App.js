@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -39,7 +39,8 @@ function App({ currentUser, setCurrentUser }) {
       unsubscribeFromAuth();
       unsubscribeFromUser();
     };
-  }, []);
+  }, [setCurrentUser]);
+
   return (
     <div>
       <Header />
