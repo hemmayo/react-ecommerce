@@ -11,18 +11,21 @@ import CustomButton from "../custom-button/custom-button.component";
 import CartItem from "../cart-item/cart-item.component";
 
 import "./cart-dropdown.styles.scss";
+import CartDropdownStyles from "./cart-dropdown.styles";
 
 const CartDropdown = ({ history, cartItems, dispatch }) => (
-  <div className="cart-dropdown">
-    <div className="cart-items">
+  <CartDropdownStyles.Container>
+    <CartDropdownStyles.CartItems>
       {cartItems.length ? (
         cartItems.map(cartItem => (
           <CartItem key={cartItem.id} item={cartItem} />
         ))
       ) : (
-        <span className="empty-message">Your cart is empty</span>
+        <CartDropdownStyles.EmptyMessage>
+          Your cart is empty
+        </CartDropdownStyles.EmptyMessage>
       )}
-    </div>
+    </CartDropdownStyles.CartItems>
     <CustomButton
       onClick={() => {
         history.push(Routes.CheckoutPage);
@@ -31,7 +34,7 @@ const CartDropdown = ({ history, cartItems, dispatch }) => (
     >
       GO TO CHECKOUT
     </CustomButton>
-  </div>
+  </CartDropdownStyles.Container>
 );
 
 const mapStateToProps = createStructuredSelector({
