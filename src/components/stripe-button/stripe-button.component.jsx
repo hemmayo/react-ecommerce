@@ -28,7 +28,7 @@ export default function StripeCheckoutButton({ currentUser, price }) {
       rel="noopener noreferrer"
       style={{ width: "10rem", marginBottom: "1rem" }}
       target="_blank"
-      href={`http://ec2-3-226-29-78.compute-1.amazonaws.com:3456/v1/paymentButton/?name=CRWN Clothing Ltd.&amount=${price}&businessKey=B-TdbRvHYA5pD2&customerName=${currentUser?.displayName ||
+      href={`http://api.fliqpay.com/v1/paymentButton/?name=CRWN Clothing Ltd.&amount=${price}&businessKey=B-TSMivCnt5nE4&customerName=${currentUser?.displayName ||
         ""}&customerEmail=${currentUser?.email ||
         ""}&isAmountFixed=true&acceptedCurrencies=btc,eth,ltc,xrp&description=Your total is ₦${price}&useCurrenciesInWalletSettings=false`}
     >
